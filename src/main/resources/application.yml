@@ -1,0 +1,10 @@
+common:
+  application-name: Suviet-Wows-Numbers
+  listen-ip: 0.0.0.0
+  port: 10000
+
+public-api:
+  url: https://api.worldofwarships.asia/wows/
+  application-id: 7a6140affed7598879801d87d57a5c6a
+
+db:
