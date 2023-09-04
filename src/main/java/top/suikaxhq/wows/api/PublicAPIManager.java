@@ -2,13 +2,22 @@ package top.suikaxhq.wows.api;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class PublicAPIManager {
+    private final PublicAPIConfiguration publicAPIConfiguration;
+    private final PublicAPIRequestManager publicAPIRequestManager;
+
     @Autowired
-    APIConfiguration apiConfig;
+    public PublicAPIManager(PublicAPIConfiguration publicAPIConfiguration, PublicAPIRequestManager publicAPIRequestManager) {
+        this.publicAPIConfiguration = publicAPIConfiguration;
+        this.publicAPIRequestManager = publicAPIRequestManager;
+    }
 
+    public String getAccountIdByName(String name) {
 
+    }
 
+    private S
 }
