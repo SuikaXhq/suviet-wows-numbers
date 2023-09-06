@@ -16,10 +16,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * top.suikaxhq.wows.api.PublicAPIRequestManager
- * 组织毛子Public API URL，查询并返回原始json
+ * 组织毛子Public API URL，查询并返回json构造的JavaBean对象
  */
-
 @Service
 public class PublicAPIRequestManager {
     private final PublicAPIConfiguration apiConfig;

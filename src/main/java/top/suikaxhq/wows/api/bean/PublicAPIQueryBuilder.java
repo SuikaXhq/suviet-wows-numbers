@@ -1,17 +1,20 @@
 package top.suikaxhq.wows.api.bean;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 /**
- * top.suikaxhq.wows.api.bean.PublicAPIQueryBuilder
  * 用于构建Public API Query。一个示例用法如下：
- * Map<String, Object> query = PublicAPIQueryBuilder.newBuilder(PublicAPIQueryType.WARSHIPS_STATISTICS)
- *                                                  .applicationId("1a2b3c4d5e")
- *                                                  .accountId("12345678")
- *                                                  .shipId("567890")
- *                                                  .fields("pvp")
+ * <br/>
+ * Map<String, Object> query = PublicAPIQueryBuilder.newBuilder(PublicAPIQueryType.WARSHIPS_STATISTICS) <br/>
+ *                                                  .applicationId("1a2b3c4d5e") <br/>
+ *                                                  .accountId("12345678") <br/>
+ *                                                  .shipId("567890") <br/>
+ *                                                  .fields("pvp") <br/>
  *                                                  .build().toMap()
  */
 public class PublicAPIQueryBuilder {
@@ -41,7 +44,7 @@ public class PublicAPIQueryBuilder {
     private boolean inGarage; // in_garage
     private List<String> shipId; // ship_id
 
-    public PublicAPIQueryBuilder newBuilder(PublicAPIQueryType beanType) {
+    public static PublicAPIQueryBuilder newBuilder(PublicAPIQueryType beanType) {
         return new PublicAPIQueryBuilder(beanType);
     }
 
@@ -75,7 +78,7 @@ public class PublicAPIQueryBuilder {
         this.language = language;
         return this;
     }
-    public PublicAPIQueryBuilder fields(List<String> fields) {
+    public PublicAPIQueryBuilder fields(@NotNull List<String> fields) {
         for (String field : fields) {
             field(field);
         }
@@ -88,7 +91,7 @@ public class PublicAPIQueryBuilder {
         this.fields.add(field);
         return this;
     }
-    public PublicAPIQueryBuilder extra(List<String> extra) {
+    public PublicAPIQueryBuilder extra(@NotNull List<String> extra) {
         for (String field : extra) {
             extra(field);
         }
@@ -113,7 +116,7 @@ public class PublicAPIQueryBuilder {
         this.typePlayers = type;
         return this;
     }
-    public PublicAPIQueryBuilder dates(List<String> dates) {
+    public PublicAPIQueryBuilder dates(@NotNull List<String> dates) {
         for (String date: dates) {
             date(date);
         }
@@ -126,7 +129,7 @@ public class PublicAPIQueryBuilder {
         this.dates.add(date);
         return this;
     }
-    public PublicAPIQueryBuilder nation(List<Nation> nation) {
+    public PublicAPIQueryBuilder nation(@NotNull List<Nation> nation) {
         for (Nation nationElement: nation) {
             nation(nationElement);
         }
@@ -139,7 +142,7 @@ public class PublicAPIQueryBuilder {
         this.nation.add(nation);
         return this;
     }
-    public PublicAPIQueryBuilder typeOfWarships(List<TypeOfWarships> types) {
+    public PublicAPIQueryBuilder typeOfWarships(@NotNull List<TypeOfWarships> types) {
         for (TypeOfWarships type: types) {
             typeOfWarships(type);
         }
@@ -160,7 +163,7 @@ public class PublicAPIQueryBuilder {
         this.inGarage = inGarage;
         return this;
     }
-    public PublicAPIQueryBuilder shipId(List<String> shipIds) {
+    public PublicAPIQueryBuilder shipId(@NotNull List<String> shipIds) {
         for (String shipId: shipIds) {
             shipId(shipId);
         }
